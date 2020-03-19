@@ -9,7 +9,15 @@ window.addEventListener('load', () => {
   pads.forEach((pad, index) => {
     pad.addEventListener('click', function(){
       sounds[index].currentTime = 0;
-      sounds[index].play
+      sounds[index].play();
+      createBubbles()
     });
   });
+
+  //function that makes bubbles
+  const createBubbles = (index) => {
+    const bubble = document.createElement("div");
+    visual.appendChild(bubble);
+    bubble.style.backGroundColor = colors[index];
+  }
 });
